@@ -30,6 +30,10 @@ class ErrorTrackServiceProvider extends ServiceProvider
     $this->publishes([
         __DIR__.'/views' => base_path('resources/views/Errorlog/errortrack'),
     ]);
+    
+    $this->publishes([
+         __DIR__.'/config/config.php' => config_path('Errorlog/errortrack/config.php'),
+    ]);
 
         // $this->loadRoutesFrom(__DIR__ . '/routes.php');
         
@@ -53,8 +57,8 @@ class ErrorTrackServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        include __DIR__.'/routes/web.php';
-       $this->mergeConfig();
+     include __DIR__.'/routes/web.php';
+       
         // $this->app['router']->aliasMiddleware('ErrortrackSession' , ErrortrackSession::class);
     }
 }
