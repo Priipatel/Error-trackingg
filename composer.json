@@ -1,5 +1,5 @@
 {
-    "name": "Errorlog/errortrack",
+    "name": "errorlog/errortrack",
     "description": "error-tracking system",
     "type": "library",
      "license": "MIT",
