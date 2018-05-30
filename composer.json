@@ -1,0 +1,39 @@
+{
+    "name": "Errorlog/errortrack",
+    "description": "error-tracking system",
+    "type": "library",
+     "license": "MIT",
+    "authors": [
+        {
+            "name": "priyanka",
+            "email": "priyanka@micrasolution.com"
+        }
+    ],
+    "minimum-stability": "dev",
+   "require": {
+    "php" : "^7.0",
+    "illuminate/support": "~5.5.0"
+  },
+   "require-dev": {
+    "phpunit/phpunit": "^7.0",
+     "orchestra/testbench": "~3.0"
+  },
+  "autoload": {
+    "psr-4": {
+        "Errorlog\\errortrack\\": "src"
+    }
+},
+"autoload-dev": {
+    "psr-4": {
+        "Errorlog\\errortrack\\Test\\": "tests"
+    }
+},
+"extra": {
+    "laravel": {
+        "providers": [
+            "Errorlog\\errortrack\\ErrorTrackServiceProvider"
+        ]
+    }
+}
+
+}
