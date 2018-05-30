@@ -41,7 +41,7 @@ class ErrorTrackServiceProvider extends ServiceProvider
         //     $this->app->config->set('config', require __DIR__ . '/config/config.php');
         // }
 
-        // $this->loadMigrationsFrom(__DIR__.'/migrations');
+        $this->loadMigrationsFrom(__DIR__.'/migrations');
 
         // $router->middleware('ErrortrackSession',ErrortrackSession::class);
        
