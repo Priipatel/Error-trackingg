@@ -31,7 +31,7 @@ class ErrorTrackServiceProvider extends ServiceProvider
     $this->publishes([
         __DIR__.'/resources/views' => resource_path('views/vendor/errorlog'),
     ]);
-    
+
      $this->app->bind(
             ExceptionHandler::class,
             CustomHandler::class
@@ -40,6 +40,10 @@ class ErrorTrackServiceProvider extends ServiceProvider
 
     $this->publishes([
          __DIR__.'/config/config.php' => config_path('Errorlog/errortrack/config.php'),
+    ]);
+
+    $this->publishes([
+         __DIR__.'/Exceptions/CustomHandler.php' => app_path('Errorlog/errortrack'),
     ]);
 
         // $this->loadRoutesFrom(__DIR__ . '/routes.php');
