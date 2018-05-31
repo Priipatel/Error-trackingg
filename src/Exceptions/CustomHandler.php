@@ -15,7 +15,7 @@ use Illuminate\Auth\AuthenticationException;
 
 
 
-class Handler extends ExceptionHandler
+class CustomHandler extends ExceptionHandler
 {
     /**
      * A list of the exception types that are not reported.

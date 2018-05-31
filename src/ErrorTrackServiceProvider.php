@@ -25,12 +25,19 @@ class ErrorTrackServiceProvider extends ServiceProvider
     public function boot(\Illuminate\Routing\Router $router, \Illuminate\Contracts\Http\Kernel $kernel)
     {
      $this->loadRoutesFrom(__DIR__.'/routes/web.php');
+
     $this->loadViewsFrom(__DIR__.'/resources/views', 'Errorlog');
 
     $this->publishes([
         __DIR__.'/resources/views' => resource_path('views/vendor/errorlog'),
     ]);
     
+     $this->app->bind(
+            ExceptionHandler::class,
+            CustomHandler::class
+        ); 
+
+
     $this->publishes([
          __DIR__.'/config/config.php' => config_path('Errorlog/errortrack/config.php'),
     ]);
