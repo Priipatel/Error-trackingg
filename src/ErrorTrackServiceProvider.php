@@ -25,10 +25,10 @@ class ErrorTrackServiceProvider extends ServiceProvider
     public function boot(\Illuminate\Routing\Router $router, \Illuminate\Contracts\Http\Kernel $kernel)
     {
      $this->loadRoutesFrom(__DIR__.'/routes/web.php');
-      $this->loadViewsFrom(__DIR__.'/../resources/views', 'test');
+    $this->loadViewsFrom(__DIR__.'/resources/views', 'Errorlog');
 
     $this->publishes([
-        __DIR__.'/views' => base_path('resources/views/Errorlog/errortrack'),
+        __DIR__.'/resources/views' => resource_path('views/vendor/errorlog'),
     ]);
     
     $this->publishes([
@@ -41,7 +41,11 @@ class ErrorTrackServiceProvider extends ServiceProvider
         //     $this->app->config->set('config', require __DIR__ . '/config/config.php');
         // }
 
-        $this->loadMigrationsFrom(__DIR__.'/migrations');
+         $this->loadMigrationsFrom(__DIR__.'/migrations');
+
+    //  $this->publishes([
+    //     __DIR__ . '/migrations' => $this->app->databasePath() . '/migrations'
+    // ], 'migrations');
 
         // $router->middleware('ErrortrackSession',ErrortrackSession::class);
        
