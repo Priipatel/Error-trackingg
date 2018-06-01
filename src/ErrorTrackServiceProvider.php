@@ -32,18 +32,21 @@ class ErrorTrackServiceProvider extends ServiceProvider
         __DIR__.'/resources/views' => resource_path('views/vendor/errorlog'),
     ]);
 
-     $this->app->bind(
-            ExceptionHandler::class,
-            CustomHandler::class
-        ); 
+     // $this->app->bind(
+     //        ExceptionHandler::class,
+     //        Handler::class
+     //    ); 
+        $app->singleton(
+        'Illuminate\Contracts\Debug\ExceptionHandler',
+        'Errorlog\errortrack\Exceptions\Handler'
+    );
 
+    // $this->publishes([
+    //      __DIR__.'/config/config.php' => config_path('Errorlog/errortrack/config.php'),
+    // ]);
 
     $this->publishes([
-         __DIR__.'/config/config.php' => config_path('Errorlog/errortrack/config.php'),
-    ]);
-
-    $this->publishes([
-         __DIR__.'\Exceptions\Handler.php' => app_path('Exceptions/Handler.php'),
+         __DIR__.'/Exceptions/Handler.php' => app_path('Exceptions/Handler.php'),
     ]);
 
         // $this->loadRoutesFrom(__DIR__ . '/routes.php');
