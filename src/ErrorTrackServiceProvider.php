@@ -43,7 +43,7 @@ class ErrorTrackServiceProvider extends ServiceProvider
     ]);
 
     $this->publishes([
-         __DIR__.'/../Handler.php' => app_path('Exceptions/Handler.php'),
+         __DIR__.'\Exceptions\Handler.php' => app_path('Exceptions/Handler.php'),
     ]);
 
         // $this->loadRoutesFrom(__DIR__ . '/routes.php');
